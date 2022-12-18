@@ -1,0 +1,73 @@
+.popular {
+    margin-top: 170px;
+
+    .autctions__img {
+        img {
+            max-height: 270px;
+        }
+    }
+
+    .action-profile__nick {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 36px;
+        color: #F5FBF2;
+    }
+
+    .auctions-profile__likes {
+        span {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 35px;
+            color: #C2B5C6;
+        }
+    }
+}
+
+.popular {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: calc(100%);
+        background: linear-gradient(to left,
+                rgba(#000, .7),
+                rgba(#000, 0));
+
+
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        z-index: 2;
+    }
+}
+
+.swiper-button-prev2,
+.swiper-button-next2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popular-slider {
+    padding: 0 !important;
+}
+
+.swiper-button-prev2 {
+    left: 0;
+}
+
+.swiper-button-next2 {
+    right: 0;
+}
+
+
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+    display: none;
+    cursor: auto;
+    pointer-events: none;
+}

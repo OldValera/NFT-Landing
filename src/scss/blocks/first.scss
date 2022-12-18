@@ -3,38 +3,72 @@
     min-height: 100%;
     position: relative;
 
+    background-image: url('../img/bg-effect.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 
     .container {
         position: relative;
         z-index: 2;
     }
-
-
 }
 
 .first__main {
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
 
 .h1 {
-    font-family: 'Oxanium';
-    font-style: normal;
     font-weight: 700;
     font-size: 85px;
     line-height: 130px;
-    color: $white2;
+    /* or 153% */
+    font-family: 'Oxanium';
 
     span {
-        color: $yellow
+        color: $yellow;
+    }
+
+    @media(max-width: 1100px) {
+        font-size: 50px;
+        line-height: 150%;
+    }
+
+    @media(max-width: 850px) {
+        text-align: center;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 42px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 }
 
 .first__btns {
     display: flex;
     align-items: center;
+    margin: 75px 0 120px;
     grid-gap: 48px;
-    margin: 75px 0px 120px;
+
+    @media(max-width: 900px) {
+        grid-gap: 15px;
+    }
+
+    @media(max-width: 900px) {
+        margin: 50px 0;
+    }
+
+    @media(max-width: 850px) {
+        justify-content: space-between;
+        grid-gap: 20px;
+    }
 }
 
 .first__btn,
@@ -43,37 +77,85 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 36px;
+
+    @media(max-width: 1100px) {
+        padding: 15px 45px;
+    }
+
+    @media(max-width: 900px) {
+        padding: 15px 25px;
+    }
+
+    @media(max-width: 850px) {
+        flex-basis: 48%;
+    }
 }
 
 .first__btn {
     background: $yellow;
-    color: $black;
+
+    color: #000000;
+    transition: all .3s;
+
+    &:hover {
+        color: $yellow;
+        background: #000;
+    }
 }
 
 .first__btn2 {
     background: rgba(233, 215, 167, 0.1);
-    border: 1px solid #FFCE4E
+    /* Primary color */
+
+    border: 1px solid #FFCE4E;
+
+    transition: all .2s;
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 206, 78, 0.35);
+        -moz-box-shadow: 0px 0px 15px 5px rgba(255, 206, 78, 0.35);
+        box-shadow: 0px 0px 15px 5px rgba(255, 206, 78, 0.35);
+    }
 }
 
 .first__numbers {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &--fake {
+        display: none;
+    }
+
+    @media(max-width: 850px) {
+        display: none;
+
+        &--fake {
+            margin-top: 70px;
+            display: flex;
+        }
+    }
 }
 
 .first__number {
-    font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #9B9E9A;
 
-    P {
+    @media(max-width: 1100px) {
+        font-size: 20px;
+    }
+
+    p {
         font-weight: 700;
         font-size: 62px;
         line-height: 78px;
-        color: $white;
+        color: #F5FBF2;
         font-family: 'Oxanium';
 
+        @media(max-width: 1100px) {
+            font-size: 40px;
+        }
     }
 }
 
@@ -81,24 +163,45 @@
     background: linear-gradient(92.8deg, rgba(255, 137, 61, 0.09) -52.37%, rgba(250, 250, 250, 0.9) 137.41%);
     opacity: 0.95;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(22.5px);
+    backdrop-filter: blur(45px);
     padding: 18px 35px;
     width: 90%;
-    margin: 25px auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 500px) {
+        padding: 10px 22px;
+        width: 95%;
+    }
 }
 
 .first__nft {
-    background: url('../../img/nft-item.jpg');
+    background: url('../img/nft-item.jpg');
     max-width: 550px;
     width: 100%;
     height: 720px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 25px;
 
+    @media(max-width: 1280px) {
+        margin-left: 20px;
+    }
+
+    @media(max-width: 1100px) {
+        height: 550px;
+    }
+
+    @media(max-width: 850px) {
+        margin-left: 0;
+    }
+
+    @media(max-width: 500px) {
+        height: 380px;
+    }
 }
 
 .nft-header__title {
@@ -107,56 +210,80 @@
     line-height: 22px;
     letter-spacing: 0.08em;
     text-transform: capitalize;
-    color: #E4DEE7;
+    font-family: 'Oxanium';
 }
 
 .nft-header__numbers {
     font-family: 'Oxanium';
-    font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
-    color: #FFFFFF;
 }
 
-.first_nft__footer {
+.first-nft__footer {
     width: 100%;
     background: #B5C8DB;
-    backdrop-filter: blur(13.5px);
     border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 35px 35px;
+    padding: 35px 50px;
+
+    @media(max-width: 1100px) {
+        padding: 30px;
+    }
+
+    @media(max-width: 500px) {
+        padding: 15px;
+    }
 }
 
 .nft-footer__title {
-    font-family: 'Oxanium';
-    font-style: normal;
     font-weight: 600;
     font-size: 28px;
-    line-height: 35px;
+    /* identical to box height */
+
     letter-spacing: 0.07em;
+
+    /* 01 */
+
     color: #16091B;
+    font-family: Oxanium;
+
+    @media(max-width: 500px) {
+        font-size: 18px;
+    }
 }
 
-.nft-footer_nick {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 400;
+.nft-footer__nick {
     font-size: 24px;
-    line-height: 35px;
     color: #594D5E;
+
+    @media(max-width: 500px) {
+        font-size: 14px;
+    }
 }
 
-.first_nft_btn {
+.first-nft__btn {
     background: #FFCE4E;
-    backdrop-filter: blur(22.5px);
+    backdrop-filter: blur(45px);
+    padding: 23px 45px;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    color: $black;
-    padding: 23px 44px;
+    color: #000000;
+
+    transition: all .3s;
+
+    &:hover {
+        color: $yellow;
+        background: #000;
+    }
+
+    @media(max-width: 500px) {
+        padding: 8px 23px;
+        font-size: 16px;
+    }
 }
 
 .first__item {
@@ -164,7 +291,9 @@
 }
 
 .first__arrow-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -172,13 +301,23 @@
 
     background: rgba(109, 91, 114, 0.4);
     box-shadow: 0px 14px 79px rgba(134, 19, 165, 0.1);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(40px);
+    border-radius: 50%;
     width: 156px;
     height: 156px;
-    border-radius: 50%;
     z-index: 10;
 
+    transition: all .3s;
+
     img {
-        width: 25px;
+        max-width: 50%;
+    }
+
+    &:hover {
+        background: darken(rgba(109, 91, 114, 0.4), 20);
+    }
+
+    @media(max-width: 850px) {
+        display: none;
     }
 }
